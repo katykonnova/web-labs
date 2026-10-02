@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Мои лабораторные работы — Web-design</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f0f4f8;
+            color: #2b2b2b;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1f4e79, #2e75b6);
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+            header h1 {
+                margin: 0 0 10px;
+                font-size: 32px;
+            }
+
+            header p {
+                margin: 0;
+                opacity: 0.9;
+            }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .labs {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .lab-card {
+            display: block;
+            background: #fff;
+            border-radius: 14px;
+            padding: 22px;
+            text-decoration: none;
+            color: #2b2b2b;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+
+            .lab-card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+            }
+
+            .lab-card h2 {
+                margin: 0 0 8px;
+                color: #1f4e79;
+                font-size: 20px;
+            }
+
+            .lab-card p {
+                margin: 0;
+                color: #666;
+                font-size: 14px;
+            }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #888;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Лабораторные работы</h1>
+        <p>Дисциплина «Web-design» · Екатерина Коннова</p>
+    </header>
+
+    <main>
+        <div class="labs">
+
+            <a class="lab-card" href="lab1-1/index.html">
+                <h2>Лаба 1-1</h2>
+                <p>Обязанности котов</p>
+            </a>
+
+            <a class="lab-card" href="lab1-2/index.html">
+                <h2>Лаба 1-2</h2>
+                <p>Мой город</p>
+            </a>
+
+            <a class="lab-card" href="lab2/index.html">
+                <h2>Лаба 3</h2>
+                <p>Описание третьей работы</p>
+            </a>
+
+        </div>
+    </main>
+
+    <footer>
+        © 2026 · Все лабораторные работы в одном месте
+    </footer>
+
+</body>
+</html>
