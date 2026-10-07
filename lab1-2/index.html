@@ -65,6 +65,28 @@
             background: #ffe680;
             padding: 0 4px;
         }
+.back-btn {
+    display: inline-block;
+    margin: 20px;
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #1f4e79;
+    text-decoration: none;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 30px;
+    transition: all 0.25s ease;
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+    
     </style>
 </head>
 <body>
@@ -231,4 +253,5 @@
     </footer>
 
 </body>
+<a href="../index.html" class="back-btn">← На главную</a>
 </html>
