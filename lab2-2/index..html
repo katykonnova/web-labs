@@ -1,0 +1,676 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Сравнение BMW 3 Series, 5 Series и X5 (2026)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f4f2ee; /* тёплый светло-серый вместо холодного голубого */
+            color: #22262b; /* графитовый текст */
+            line-height: 1.6;
+        }
+
+        /* ==================== ШАПКА ==================== */
+        header {
+            background: linear-gradient(135deg, #1a2b45, #2c4566);
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+            header h1 {
+                margin: 0 0 10px;
+                font-size: 32px;
+                letter-spacing: 0.5px;
+            }
+
+            header p {
+                margin: 0;
+                opacity: 0.85;
+                font-size: 15px;
+            }
+
+        /* ==================== НАВИГАЦИЯ ==================== */
+        nav {
+            max-width: 900px;
+            margin: 20px auto 0;
+            text-align: center;
+        }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+                padding: 8px 16px;
+                background: rgba(255, 255, 255, 0.12);
+                color: #fff;
+                text-decoration: none;
+                border-radius: 20px;
+                font-size: 14px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                transition: all 0.25s ease;
+            }
+
+                nav a:hover {
+                    background: #d9a441; /* песочный акцент при наведении */
+                    border-color: #d9a441;
+                    color: #1a2b45;
+                }
+
+        /* ==================== ОСНОВНОЙ КОНТЕНТ ==================== */
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 20px rgba(26, 43, 69, 0.08);
+        }
+
+            section h2 {
+                margin-top: 0;
+                color: #1a2b45;
+                border-bottom: 2px solid #e6e2db;
+                padding-bottom: 10px;
+            }
+
+        /* ==================== ИЗОБРАЖЕНИЯ ==================== */
+        figure {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+            figure img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 10px;
+                box-shadow: 0 6px 24px rgba(26, 43, 69, 0.15);
+                border: 1px solid #e6e2db;
+            }
+
+        figcaption {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #6b7280;
+            font-style: italic;
+        }
+
+        /* ==================== ТАБЛИЦА ==================== */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(26, 43, 69, 0.1);
+            font-size: 15px;
+        }
+
+        caption {
+            padding: 16px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a2b45;
+            background: #e8eef5; /* мягкий серо-синий вместо ярко-голубого */
+            border-radius: 12px 12px 0 0;
+        }
+
+        th, td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid #e6e2db; /* тёплая граница */
+        }
+
+        thead th {
+            background: linear-gradient(135deg, #1a2b45, #2c4566);
+            color: #ffffff;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            border-bottom: none;
+            font-size: 14px;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #faf9f6;
+        }
+        /* тёплый бежевый */
+        tbody tr:hover {
+            background: #f0ece2;
+            transition: background 0.2s ease;
+        }
+
+        tbody th {
+            font-weight: 600;
+            color: #1a2b45;
+            background: #f4f2ee;
+            width: 30%;
+        }
+
+        tfoot td {
+            text-align: center;
+            font-size: 13px;
+            color: #6b7280;
+            font-style: italic;
+            background: #f4f2ee;
+            border-bottom: none;
+        }
+
+        /* ==================== ВЫДЕЛЕНИЕ ==================== */
+        mark {
+            background: #f7dfa8; /* тёплый жёлто-песочный */
+            color: #6b4a00;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        /* ==================== DETAILS ==================== */
+        details {
+            margin: 12px 0;
+            padding: 14px 18px;
+            background: #faf9f6;
+            border-radius: 10px;
+            border-left: 4px solid #0066b1; /* BMW M-синий */
+        }
+
+        summary {
+            font-weight: 600;
+            color: #1a2b45;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        details p, details ul {
+            margin: 10px 0 0;
+            color: #4a5568;
+            font-size: 14px;
+        }
+
+        /* ==================== ASIDE ==================== */
+        aside {
+            background: #fdf6e8; /* тёплый песочный */
+            border-left: 4px solid #d9a441;
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin: 16px 0;
+            font-size: 14px;
+        }
+
+            aside h3 {
+                margin: 0 0 8px;
+                color: #8a5e00;
+                font-size: 16px;
+            }
+
+        /* ==================== ЦИТАТЫ ==================== */
+        blockquote {
+            margin: 16px 0;
+            padding: 12px 20px;
+            background: #f4f2ee;
+            border-left: 4px solid #0066b1;
+            font-style: italic;
+            color: #4a5568;
+            border-radius: 0 8px 8px 0;
+        }
+
+            blockquote footer {
+                margin-top: 8px;
+                font-style: normal;
+                font-size: 13px;
+                color: #6b7280;
+                text-align: right;
+            }
+
+        /* ==================== PROGRESS ==================== */
+        progress {
+            width: 100%;
+            height: 22px;
+            border-radius: 11px;
+            overflow: hidden;
+        }
+
+            progress::-webkit-progress-bar {
+                background: #e6e2db;
+                border-radius: 11px;
+            }
+
+            progress::-webkit-progress-value {
+                background: linear-gradient(90deg, #0066b1, #1a2b45);
+                border-radius: 11px;
+            }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: #4a5568;
+            margin-bottom: 4px;
+        }
+
+        /* ==================== СПИСКИ ==================== */
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 4px;
+        }
+
+        time {
+            color: #0066b1;
+            font-weight: 600;
+        }
+
+        /* ==================== FOOTER ==================== */
+        footer.page-footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #6b7280;
+            font-size: 14px;
+            background: #faf9f6;
+            border-top: 1px solid #e6e2db;
+            margin-top: 40px;
+        }
+
+        /* ==================== КНОПКА ==================== */
+        .back-btn {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 12px 24px;
+            background: #1a2b45;
+            color: #fff;
+            font-weight: 600;
+            font-size: 15px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+            .back-btn:hover {
+                background: #0066b1;
+                transform: translateX(-2px);
+                box-shadow: 0 8px 20px rgba(0, 102, 177, 0.25);
+            }
+
+        /* ==================== МИНИ-ТАБЛИЦА ==================== */
+        .mini-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            font-size: 14px;
+        }
+
+            .mini-table th, .mini-table td {
+                padding: 10px 12px;
+                border: 1px solid #e6e2db;
+            }
+
+            .mini-table thead th {
+                background: #2c4566;
+                color: #fff;
+                text-transform: none;
+            }
+
+            .mini-table tbody tr:nth-child(even) {
+                background: #faf9f6;
+            }
+
+        /* подсветка второго столбца через <col> */
+        col.highlight {
+            background: #eef3f9;
+        }
+
+        /* Зелёный акцент для секции X5 — опционально */
+        #bmwx5 h2 {
+            border-bottom-color: #cfe3d8;
+        }
+
+        #bmwx5 details {
+            border-left-color: #2f5d4a;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Сравнение BMW: 3 Series, 5 Series, X5</h1>
+        <p>Модельный ряд 2026 года — характеристики, безопасность, цены</p>
+        <nav>
+            <a href="#table">Таблица</a>
+            <a href="#bmw3">BMW 3 Series</a>
+            <a href="#bmw5">BMW 5 Series</a>
+            <a href="#bmwx5">BMW X5</a>
+            <a href="#safety">Безопасность</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ==================== ОСНОВНАЯ ТАБЛИЦА ==================== -->
+        <section id="table">
+            <h2>Сводная таблица характеристик</h2>
+
+            <table>
+                <caption>Сравнение BMW 3 Series, 5 Series и X5 (2026)</caption>
+
+                <colgroup>
+                    <col style="width: 28%;">
+                    <col class="highlight" style="width: 24%;">
+                    <col style="width: 24%;">
+                    <col style="width: 24%;">
+                </colgroup>
+
+                <thead>
+                    <tr>
+                        <th>Характеристика</th>
+                        <th>BMW 3 Series</th>
+                        <th>BMW 5 Series</th>
+                        <th>BMW X5</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <th>Тип двигателя</th>
+                        <td>Бензиновый 2.0T / 3.0T</td>
+                        <td>Бензиновый 2.0T / Дизель 3.0D</td>
+                        <td>Бензиновый 3.0T / Mild Hybrid</td>
+                    </tr>
+                    <tr>
+                        <th>Расход топлива</th>
+                        <td>~7.5 л/100 км (смеш.)</td>
+                        <td>~6.4 л/100 км (520i)</td>
+                        <td>~9.3 л/100 км (смеш.)</td>
+                    </tr>
+                    <tr>
+                        <th>Тип КПП</th>
+                        <td>Автоматическая 8-ст. Steptronic</td>
+                        <td>Автоматическая 8-ст. Steptronic</td>
+                        <td>Автоматическая 8-ст. Steptronic</td>
+                    </tr>
+                    <tr>
+                        <th>Количество передач</th>
+                        <td>8</td>
+                        <td>8</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <th>Габариты (Д×Ш×В)</th>
+                        <td>4709 × 1827 × 1442 мм</td>
+                        <td>~5060 × 1900 × 1515 мм</td>
+                        <td>4935 × 2004 × 1765 мм</td>
+                    </tr>
+                    <tr>
+                        <th>Объём багажника</th>
+                        <td>480 л</td>
+                        <td>~520 л</td>
+                        <td><mark>650 л</mark> (до 1870 л)</td>
+                    </tr>
+                    <tr>
+                        <th>Разгон 0–100 км/ч</th>
+                        <td>4.4 сек (330i xDrive)</td>
+                        <td>7.5 сек (520i)</td>
+                        <td>~5.3 сек (xDrive40i)</td>
+                    </tr>
+                    <tr>
+                        <th>Максимальная скорость</th>
+                        <td>253 км/ч</td>
+                        <td>230 км/ч</td>
+                        <td>~243 км/ч (ограничена)</td>
+                    </tr>
+                    <tr>
+                        <th>Тормозная система</th>
+                        <td>Дисковые вентилируемые (перед/зад)</td>
+                        <td>Дисковые вентилируемые (перед/зад)</td>
+                        <td>Дисковые вентилируемые (перед/зад)</td>
+                    </tr>
+                    <tr>
+                        <th>Wi-Fi / Bluetooth</th>
+                        <td>Есть / Есть</td>
+                        <td>Есть / Есть</td>
+                        <td>Есть / Есть</td>
+                    </tr>
+                    <tr>
+                        <th>Гарантия</th>
+                        <td>5 лет / без ограничения км*</td>
+                        <td>5 лет / без ограничения км*</td>
+                        <td>4 года / 50 000 миль**</td>
+                    </tr>
+                    <tr>
+                        <th>Начальная цена</th>
+                        <td>от $50 000</td>
+                        <td>от $116 900</td>
+                        <td>от $66 300</td>
+                    </tr>
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <td colspan="4">* Данные для рынка Австралии. ** Данные для рынка США. Цены ориентировочные, актуальны на 2026 год.</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <!-- ==================== BMW 3 SERIES ==================== -->
+        <section id="bmw3">
+            <h2>BMW 3 Series (G20 LCI)</h2>
+
+            <figure>
+                <img src="images/BMW3.jpg"
+                     alt="BMW 3 Series 330i M Sport 2026"
+                     title="BMW 3 Series 330i M Sport"
+                     width="640" height="360">
+                <figcaption>BMW 3 Series 330i M Sport (G20 LCI) — рестайлинг 2026 модельного года</figcaption>
+            </figure>
+
+            <p>BMW 3 Series — <time datetime="2026-01-23">с 23 января 2026</time> доступен в обновлённой версии. Базовая комплектация 330i xDrive оснащается 2.0-литровым TwinPower Turbo (255 л.с.) и 8-ступенчатым автоматом Steptronic.</p>
+
+            <details>
+                <summary>Системы безопасности BMW 3 Series</summary>
+                <ul>
+                    <li>ABS, EBD, Brake Assist</li>
+                    <li>Dynamic Stability Control (DSC) с Dynamic Traction Control</li>
+                    <li>Frontal Collision Warning с автоматическим торможением</li>
+                    <li>Lane Departure Warning</li>
+                    <li>6 подушек безопасности (фронтальные, боковые, шторки)</li>
+                    <li>Rear-view Camera, Parking Assistant</li>
+                </ul>
+            </details>
+
+            <details>
+                <summary>Рейтинг краш-теста Euro NCAP</summary>
+                <div class="progress-label">
+                    <span>Взрослые пассажиры</span>
+                    <span>5 / 5</span>
+                </div>
+                <progress value="5" max="5"></progress>
+                <div class="progress-label" style="margin-top: 8px;">
+                    <span>Безопасность детей</span>
+                    <span>5 / 5</span>
+                </div>
+                <progress value="5" max="5"></progress>
+            </details>
+
+            <aside>
+                <h3>💡 Интересный факт</h3>
+                <p>BMW 3 Series — самая продаваемая модель в истории BMW: с 1975 года продано более 16 миллионов экземпляров.</p>
+            </aside>
+
+            <blockquote>
+                <p>«3 Series остаётся эталоном среди компактных спортивных седанов. Управляемость и баланс — на высоте.»</p>
+                <footer>— Car and Driver, обзор 2026</footer>
+            </blockquote>
+        </section>
+
+        <!-- ==================== BMW 5 SERIES ==================== -->
+        <section id="bmw5">
+            <h2>BMW 5 Series (G60)</h2>
+
+            <figure>
+                <img src="images/BMW5S.jpg"
+                     alt="BMW 5 Series 520i 2026"
+                     title="BMW 5 Series 520i"
+                     width="640" height="360">
+                <figcaption>BMW 5 Series 520i (G60) — бизнес-седан нового поколения</figcaption>
+            </figure>
+
+            <p>BMW 5 Series восьмого поколения (G60) представлен <time datetime="2026-02-02">со 2 февраля 2026</time>. 520i оснащается 2.0T + 48V mild hybrid, 208 л.с., разгон до 100 км/ч — 7.5 сек.</p>
+
+            <details>
+                <summary>Системы безопасности BMW 5 Series</summary>
+                <ul>
+                    <li>ABS, EBD, Brake Assist, Cornering Brake Control</li>
+                    <li>Forward Collision Warning с вмешательством в тормоза</li>
+                    <li>Rear Collision Prevention, Post Collision Braking</li>
+                    <li>Curtain Airbags, фронтальные и боковые подушки</li>
+                    <li>Bluetooth Extended, Wireless Charging</li>
+                    <li>Lane Departure Warning, High Beam Assist</li>
+                </ul>
+            </details>
+
+            <details>
+                <summary>Рейтинг краш-теста Euro NCAP</summary>
+                <div class="progress-label">
+                    <span>Взрослые пассажиры</span>
+                    <span>5 / 5</span>
+                </div>
+                <progress value="5" max="5"></progress>
+                <div class="progress-label" style="margin-top: 8px;">
+                    <span>Помощь водителю</span>
+                    <span>4 / 5</span>
+                </div>
+                <progress value="4" max="5"></progress>
+            </details>
+
+            <aside>
+                <h3>💡 Интересный факт</h3>
+                <p>5 Series G60 — первый автомобиль BMW, который можно открыть и завести через цифровой ключ в приложении MyBMW без физического ключа.</p>
+            </aside>
+
+            <blockquote>
+                <p>«5 Series стал тише, комфортнее и технологичнее. Он ближе к 7 Series, чем когда-либо.»</p>
+                <footer>— Auto Express, обзор 2026</footer>
+            </blockquote>
+        </section>
+
+        <!-- ==================== BMW X5 ==================== -->
+        <section id="bmwx5">
+            <h2>BMW X5 (G05 LCI)</h2>
+
+            <figure>
+                <img src="images/BMW5.jpg"
+                     alt="BMW X5 xDrive40i 2026"
+                     title="BMW X5 xDrive40i"
+                     width="640" height="360">
+                <figcaption>BMW X5 xDrive40i (G05 LCI) — премиальный среднеразмерный SUV</figcaption>
+            </figure>
+
+            <p>BMW X5 — флагманский SUV среднего размера. xDrive40i оснащён 3.0-литровым рядным шестицилиндровым двигателем (375 л.с.) с 48V mild hybrid. Расход — до 25 MPG (комб.) [citation:3].</p>
+
+            <details>
+                <summary>Системы безопасности BMW X5</summary>
+                <ul>
+                    <li>ABS, Brake Assist, Automatic Emergency Braking</li>
+                    <li>Blind Spot Monitor, Rear Cross Traffic Alert</li>
+                    <li>Lane Departure Warning, Stability Control</li>
+                    <li>Backup Camera, Rain Sensing Wipers</li>
+                    <li>WiFi Hotspot, Bluetooth, Apple CarPlay / Android Auto</li>
+                    <li>Автоматическое торможение при столкновении</li>
+                </ul>
+            </details>
+
+            <details>
+                <summary>Рейтинг краш-теста (NHTSA / Euro NCAP)</summary>
+                <div class="progress-label">
+                    <span>Общая оценка</span>
+                    <span>5 / 5</span>
+                </div>
+                <progress value="5" max="5"></progress>
+                <div class="progress-label" style="margin-top: 8px;">
+                    <span>Боковой удар</span>
+                    <span>5 / 5</span>
+                </div>
+                <progress value="5" max="5"></progress>
+            </details>
+
+            <aside>
+                <h3>💡 Интересный факт</h3>
+                <p>X5 — первый SUV, который BMW начал собирать в США (завод в Спартанбурге, Южная Каролина). С 1999 года это одна из самых успешных моделей марки в Северной Америке.</p>
+            </aside>
+
+            <blockquote>
+                <p>«X5 по-прежнему задаёт стандарты в классе: мощные двигатели, роскошный салон и отличная управляемость для своих размеров.»</p>
+                <footer>— MotorTrend, обзор 2026</footer>
+            </blockquote>
+        </section>
+
+        <!-- ==================== МИНИ-ТАБЛИЦА (DIV + MINI-TABLE) ==================== -->
+        <section id="safety">
+            <h2>Мини-сравнение по безопасности (div + таблица)</h2>
+            <p>Ниже — упрощённое сравнение по трём ключевым критериям. Для наглядности используется обёртка <code>&lt;div&gt;</code> и компактная таблица.</p>
+
+            <div class="mini-table-wrapper">
+                <table class="mini-table">
+                    <caption style="caption-side: top; text-align: left; font-size: 14px; color: #6b7a8d; padding-bottom: 6px;">
+                        Ключевые системы безопасности (стандарт)
+                    </caption>
+                    <thead>
+                        <tr>
+                            <th>Критерий</th>
+                            <th>3 Series</th>
+                            <th>5 Series</th>
+                            <th>X5</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Подушки безопасности</td>
+                            <td>6</td>
+                            <td>6+</td>
+                            <td>6+</td>
+                        </tr>
+                        <tr>
+                            <td>ABS + ESP</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td>Предотвращение столкновений</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td>Wi-Fi / Bluetooth</td>
+                            <td>✅ / ✅</td>
+                            <td>✅ / ✅</td>
+                            <td>✅ / ✅</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <a href="../index.html" class="back-btn">← На главную</a>
+
+    </main>
+
+    <footer class="page-footer">
+        <p>Лабораторная работа: сравнение автомобилей BMW. Данные актуальны на <time datetime="2026">2026 год</time>.</p>
+    </footer>
+
+</body>
+</html>

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Lab2/Base task/comparison_cars</title>
     <style>
-        {
+        * {
             box-sizing: border-box;
         }
 
@@ -27,29 +27,99 @@
              font-size: 32px;
          }
 
-         header p {
-             margin:0;
-             opacity:0.9;
-         }
-
-         main {
+         
+         table {
+             width: 100%;
              max-width: 900px;
              margin: 40px auto;
-             padding: 0 20px;
+             border-collapse: collapse;
+             background: #ffffff;
+             border-radius: 12px;
+             overflow: hidden;
+             box-shadow: 0 4px 20px rgba(31, 78, 121, 0.12);
+             font-size: 15px;
          }
-         footer {
-             text-align: center;
-             padding: 30px 20px;
-             color: #888;
-             font-size: 14px;
-         }
+        caption {
+            caption-side: top;
+            padding: 16px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #1f4e79;
+            background: #e8f0f9;
+            border-radius: 12px 12px 0 0;
+        }
+        th, td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        thead th {
+            background: linear-gradient(135deg, #1f4e79, #2e75b6);
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            border-bottom: none;
+        }
+        tbody tr:nth-child(even) {
+            background: #f7fafd; /* чередование строк */
+        }
+
+        tbody tr:hover {
+            background: #eaf3fb; /* подсветка при наведении */
+            transition: background 0.2s ease;
+        }
+
+        tbody th {
+            font-weight: 600;
+            color: #1f4e79;
+            background: #f0f4f8;
+            width: 30%;
+        }
+        tfoot td {
+            text-align: center;
+            font-size: 13px;
+            color: #6b7a8d;
+            font-style: italic;
+            background: #f0f4f8;
+            border-bottom: none;
+        }
+
+        mark {
+            background: #ffe08a;
+            color: #7a4a00;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        details {
+            max-width: 900px;
+            margin: 12px auto;
+            padding: 14px 18px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(31, 78, 121, 0.08);
+            cursor: pointer;
+        }
+
+        summary {
+            font-weight: 600;
+            color: #1f4e79;
+            font-size: 15px;
+        }
+        details p {
+            margin: 10px 0 0;
+            color: #4a5568;
+            font-size: 14px;
+        }
+
+         
          .back-btn {
              display: inline-block;
              margin: 20px;
              padding: 12px 24px;
-             background: rgba(255, 255, 255, 0.3);
              color: #1f4e79;
-             font-family: 'Segoe UI', Arial, sans-serif;
              font-weight: 600;
              font-size: 15px;
              border-radius: 30px;
@@ -57,7 +127,7 @@
          }
          .back-btn:hover {
              background: rgba(255, 255, 255, 0.3);
-             transform: translate(-2px);
+             transform: translateX(-2px);
              box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
          }
     </style>
@@ -66,6 +136,189 @@
     <header>
         <h1>  Сравнение характеристик автомобилей </h1>
     </header>
+    <table>
+        <caption>
+            Сравнение характеристик автомобилей Lamborgini, Voyah, Jaguar
+        </caption>
+        <thead>
+            <tr>
+                <th>
+                    Характеристики
+                </th>
+                <th>
+                    Lamborgini
+                </th>
+                <th>
+                    Voyah
+                </th>
+                <th>
+                    Jaguar
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    Самая дорогая модель
+                </td>
+                <td>
+                    Revuelto SV
+                </td>
+                <td>
+                    Dream 9 Lizun
+                </td>
+                <td>
+                    Type 01
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Самая дешёвая модель
+                </td>
+                <td>
+                    Huracan EVO
+                </td>
+                <td>
+                    Passion S
+                </td>
+                <td>
+                    F-PACE P250
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Двигатель
+                </td>
+                <td>
+                    6.5L V12 гибрид
+                </td>
+                <td>
+                    1.5T гибрид
+                </td>
+                <td>
+                    Три электромотора
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Расход топлива
+                </td>
+                <td>
+                    13 км/л
+                </td>
+                <td>
+                    1500 км CLTC
+                </td>
+                <td>
+                    724 км WLTP
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Скорость
+                </td>
+                <td>
+                    2.4 сек
+                </td>
+                <td>
+                    ~5.9 сек
+                </td>
+                <td>
+                    3.2 сек
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mark>
+                        Наличие экологических сертификатов
+                    </mark>
+
+                </td>
+                <td>
+                    Гибрид HPEV
+                </td>
+                <td>
+                    Электро / Гибрид
+                </td>
+                <td>
+                    Чистый электромобиль
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Гарантийный срок
+                </td>
+                <td>
+                    4 года
+                </td>
+                <td>
+                    Нет данных
+                </td>
+                <td>
+                    Нет данных
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Максимальная скорость
+                </td>
+                <td>
+                    345 км/ч
+                </td>
+                <td>
+                    ~203 км/ч
+                </td>
+                <td>
+                    ~250 км/ч
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Тип (механическая, автоматическая, вариатор)
+                </td>
+                <td>
+                    Робот DCT
+                </td>
+                <td>
+                    Редуктор
+                </td>
+                <td>
+                    Редуктор
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Количество передач
+                </td>
+                <td>
+                    8
+                </td>
+                <td>
+                    1
+                </td>
+                <td>
+                    1
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">Данные актуальны на 2026 год</td>
+            </tr>
+        </tfoot>
+    </table>
+    <details>
+        <summary> О Lamborgini</summary>
+        <p>Итальянский производитель, основан в 1963 году Ферручо Ламборгини</p>
+    </details>
+    <details>
+        <summary> О Voyah</summary>
+        <p>Китайский премиальный электробренд, принадлежит Dongfeng</p>
+    </details>
+    <details>
+        <summary> О Jaguar</summary>
+        <p>Британская марка, основана в 1935 году, с 2008 входит в Tata Motors</p>
+    </details>
+    <a href="../index.html" class="back-btn">← На главную</a>
 </body>
-<a href="../index.html" class="back-btn">← На главную</a>
 </html>
