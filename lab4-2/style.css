@@ -1,0 +1,383 @@
+﻿/* --- Базовые настройки и сброс --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #faf8f5; /* Тёплый кремовый фон */
+    color: #2b2b2b;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* --- Навигация --- */
+.header {
+    padding: 30px 60px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    justify-content: flex-end;
+}
+
+    .nav-links a {
+        text-decoration: none;
+        color: #2b2b2b;
+        font-weight: 500;
+        font-size: 1.05rem;
+        position: relative;
+        transition: color 0.3s;
+    }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #b87c4c; /* Карамельный акцент */
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+/* --- Главный экран (Hero) --- */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 140px 60px 80px 60px;
+    max-width: 1300px;
+    margin: 0 auto;
+    min-height: 90vh;
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+    .hero-content h1 {
+        font-size: 3.5rem;
+        line-height: 1.1;
+        margin-bottom: 10px;
+        color: #1a1a1a;
+        letter-spacing: -1px;
+        white-space: nowrap;
+    }
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #5c8d89; /* Бирюзовый (цвет воды) */
+    margin-bottom: 25px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero-text {
+    font-size: 1.15rem;
+    margin-bottom: 30px;
+    color: #4a4a4a;
+}
+
+/* --- Теги навыков --- */
+.skills {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 35px;
+    list-style: none;
+}
+
+    .skills li {
+        background-color: #fff;
+        color: #b87c4c;
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        border: 1px solid #e5e0d8;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        transition: all 0.3s ease;
+    }
+
+        .skills li:hover {
+            background-color: #b87c4c;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+/* --- Кнопка CTA --- */
+.cta-button {
+    display: inline-block;
+    padding: 16px 40px;
+    background-color: #b87c4c;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: 0 8px 20px rgba(184, 124, 76, 0.3);
+    transition: all 0.3s ease;
+}
+
+    .cta-button:hover {
+        background-color: #9c653a;
+        transform: translateY(-3px);
+        box-shadow: 0 12px 25px rgba(184, 124, 76, 0.4);
+    }
+
+/* --- Блок с фото --- */
+.hero-image {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.image-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+    .image-wrapper img {
+        width: 100%;
+        max-width: 420px;
+        border-radius: 200px 200px 20px 20px; /* Форма арки */
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        object-fit: cover;
+        aspect-ratio: 3/4;
+        transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    .image-wrapper:hover img {
+        transform: scale(1.02);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    }
+
+.hero-image figcaption {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #888;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+/* Иконка фотоаппарата */
+.camera-icon {
+    position: absolute;
+    bottom: 20px;
+    right: -15px;
+    background: #fff;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Декоративное пятно за фото */
+.hero-image::before {
+    content: '';
+    position: absolute;
+    width: 90%;
+    height: 80%;
+    background-color: #e5e0d8;
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    top: 0;
+    left: 5%;
+    z-index: 0;
+    animation: morph 8s ease-in-out infinite;
+}
+
+@keyframes morph {
+    0%, 100% {
+        border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    }
+
+    34% {
+        border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
+    }
+
+    67% {
+        border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+    }
+}
+
+/* --- Анимации появления --- */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.delay-1 {
+    animation-delay: 0.15s;
+}
+
+.delay-2 {
+    animation-delay: 0.3s;
+}
+
+.delay-3 {
+    animation-delay: 0.45s;
+}
+
+.delay-4 {
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Бегущая строка --- */
+.marquee {
+    background-color: #5c8d89;
+    color: #fff;
+    padding: 15px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    display: flex;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.marquee-content {
+    display: flex;
+    animation: scroll 25s linear infinite;
+}
+
+    .marquee-content span {
+        padding: 0 15px;
+    }
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* --- Секция контактов --- */
+.contacts {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #f0ebe1;
+}
+
+    .contacts h2 {
+        margin-bottom: 15px;
+        font-size: 2rem;
+        color: #1a1a1a;
+    }
+
+    .contacts p {
+        color: #4a4a4a;
+        margin-bottom: 30px;
+    }
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    font-style: normal;
+}
+
+    .contact-links a {
+        color: #b87c4c;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.2rem;
+        padding-bottom: 5px;
+        border-bottom: 2px solid transparent;
+        transition: border-color 0.3s, color 0.3s;
+    }
+
+        .contact-links a:hover {
+            color: #9c653a;
+            border-color: #9c653a;
+        }
+
+/* --- Подвал --- */
+footer {
+    text-align: center;
+    padding: 30px;
+    font-size: 0.9rem;
+    color: #888;
+    background-color: #faf8f5;
+}
+
+/* --- Адаптивность (для телефонов и планшетов) --- */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column-reverse;
+        padding: 120px 20px 60px 20px;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+        white-space: normal;
+    }
+
+    .skills {
+        justify-content: center;
+    }
+
+    .nav-links {
+        justify-content: center;
+        padding-right: 0;
+    }
+
+    .header {
+        padding: 20px;
+    }
+
+    .camera-icon {
+        right: 10px;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

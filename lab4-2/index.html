@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Екатерина — Веб-разработчик и Фотограф</title>
+    <meta name="description" content="Портфолио Екатерины: современная веб-разработка и атмосферная фотография. Создаю сайты и ловлю красивые моменты.">
+
+    <!-- Подключаем шрифт Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Подключаем наш CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Шапка сайта с навигацией -->
+    <header class="header">
+        <nav aria-label="Основная навигация">
+            <ul class="nav-links">
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#skills">Навыки</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Основной контент -->
+    <main>
+        <!-- Главный экран (Hero) -->
+        <section class="hero" id="about">
+            <div class="hero-content">
+                <h1 class="fade-in-up">Привет! Я Екатерина</h1>
+                <p class="subtitle fade-in-up delay-1">Веб-разработчик в процессе · Фотограф</p>
+                <p class="hero-text fade-in-up delay-2">
+                    По соционике я — Дюма: ценю уют, гармонию и людей вокруг. А еще я пишу код на HTML, CSS, JS и ловлю моменты в объектив. Для меня веб-разработка и фотография — это два способа показать миру свою эстетику и сделать его немного лучше.
+                </p>
+
+                <!-- Семантический список навыков -->
+                <ul class="skills fade-in-up delay-3" id="skills">
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                    <li>Photography</li>
+                    <li>ЗОЖ</li>
+                </ul>
+
+                <!-- Кнопка CTA -->
+                <a href="https://t.me/KKaterinnka" target="_blank" rel="noopener noreferrer" class="cta-button fade-in-up delay-4">
+                    ✈️ Написать в Telegram
+                </a>
+            </div>
+
+            <!-- Семантическая иллюстрация с подписью -->
+            <figure class="hero-image fade-in-up delay-3">
+                <div class="image-wrapper">
+                    <img src="italy.jpg" alt="Екатерина на фоне фонтана Треви в Риме">
+                    <span class="camera-icon" aria-hidden="true">📷</span>
+                </div>
+                <figcaption>Ловлю моменты · Рим</figcaption>
+            </figure>
+        </section>
+
+        <!-- Бегущая строка -->
+        <aside class="marquee" aria-hidden="true">
+            <div class="marquee-content">
+                <span>Веб-разработка</span> <span>•</span> <span>Фотография</span> <span>•</span> <span>Дизайн</span> <span>•</span> <span>Творчество</span> <span>•</span>
+                <span>Веб-разработка</span> <span>•</span> <span>Фотография</span> <span>•</span> <span>Дизайн</span> <span>•</span> <span>Творчество</span> <span>•</span>
+                <span>Веб-разработка</span> <span>•</span> <span>Фотография</span> <span>•</span> <span>Дизайн</span> <span>•</span> <span>Творчество</span> <span>•</span>
+                <span>Веб-разработка</span> <span>•</span> <span>Фотография</span> <span>•</span> <span>Дизайн</span> <span>•</span> <span>Творчество</span> <span>•</span>
+            </div>
+        </aside>
+
+        <!-- Секция контактов -->
+        <section id="contacts" class="contacts">
+            <h2>Давай знакомиться!</h2>
+            <p>Открыта к интересным проектам, стажировкам и просто теплому общению.</p>
+
+            <address class="contact-links">
+                <a href="https://t.me/KKaterinnka" target="_blank" rel="noopener noreferrer">
+                    Telegram: @KKaterinnka
+                </a>
+                <!-- Замени ссылку ниже на свой реальный GitHub, если он есть -->
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                </a>
+            </address>
+        </section>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer>
+        <p>© 2024 Екатерина. Создано с любовью к чистому коду.</p>
+    </footer>
+
+</body>
+</html>

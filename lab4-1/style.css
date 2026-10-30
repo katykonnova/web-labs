@@ -1,0 +1,79 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: red;
+}
+
+.link {
+    color:forestgreen;
+}
+
+.special-link {
+    color: dodgerblue;
+}
+.yellowlink {
+    color: yellow;
+    background-color: #333;
+    display: inline-block;
+    padding: 2px 4px;
+}
+
+
+.color-list li:first-child {
+    color:lightslategrey;
+}
+
+.color-list li:nth-child(2) {
+    color: saddlebrown;
+}
+
+.color-list li.highlighted {color: black;}
+
+h3::before {
+    content: "*";
+}
+#first-post h2, #first-post p{
+    color: darkorange;
+}
+.post {
+    color: rebeccapurple;
+}
+
+
+input[placeholder="Белый"] {
+    color: white;
+    background-color: #333;
+}
+
+
+
+h3 {
+    color: hotpink;
+}
+
+
+.important-widget h3 {
+    color:darkred;
+}
+.widget.important-widget {
+    color: darkred;
+}
+.nav-list li {
+    padding: 2px 0;
+}
+
+.note {
+    color: darkred;
+}
+
+.submit-btn {
+    color: black;
+}
