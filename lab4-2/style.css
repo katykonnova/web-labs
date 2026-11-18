@@ -6,12 +6,12 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Плавная прокрутка перенесена сюда (правильнее для html) */
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #faf8f5; /* Тёплый кремовый фон */
+    background-color: #faf8f5;
     color: #2b2b2b;
     line-height: 1.7;
     overflow-x: hidden;
@@ -49,13 +49,21 @@ body {
             height: 2px;
             bottom: -4px;
             left: 0;
-            background-color: #b87c4c; /* Карамельный акцент */
+            background-color: #b87c4c;
             transition: width 0.3s;
         }
 
         .nav-links a:hover::after {
             width: 100%;
         }
+
+        .nav-links a.active {
+            color: #b87c4c;
+        }
+
+            .nav-links a.active::after {
+                width: 100%;
+            }
 
 /* --- Главный экран (Hero) --- */
 .hero {
@@ -85,7 +93,7 @@ body {
 
 .subtitle {
     font-size: 1.1rem;
-    color: #5c8d89; /* Бирюзовый (цвет воды) */
+    color: #5c8d89;
     margin-bottom: 25px;
     font-weight: 600;
     letter-spacing: 2px;
@@ -115,7 +123,7 @@ body {
         font-size: 0.9rem;
         font-weight: 600;
         border: 1px solid #e5e0d8;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
         transition: all 0.3s ease;
     }
 
@@ -125,7 +133,7 @@ body {
             transform: translateY(-2px);
         }
 
-/* --- Кнопка CTA --- */
+/* --- Кнопка CTA (пружинистая + пульсация) --- */
 .cta-button {
     display: inline-block;
     padding: 16px 40px;
@@ -136,14 +144,32 @@ body {
     font-weight: 600;
     font-size: 1.1rem;
     box-shadow: 0 8px 20px rgba(184, 124, 76, 0.3);
-    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease, background-color 0.3s ease;
+    animation: ctaPulse 2.8s ease-in-out infinite;
 }
 
     .cta-button:hover {
         background-color: #9c653a;
-        transform: translateY(-3px);
+        transform: translateY(-4px) scale(1.05);
         box-shadow: 0 12px 25px rgba(184, 124, 76, 0.4);
+        animation: none; /* чтобы пульсация не мешала магнитному эффекту */
     }
+
+    .cta-button:active {
+        transform: translateY(2px) scale(0.96);
+    }
+
+@keyframes ctaPulse {
+    0%, 100% {
+        box-shadow: 0 8px 20px rgba(184, 124, 76, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 8px 32px rgba(184, 124, 76, 0.6);
+    }
+}
 
 /* --- Блок с фото --- */
 .hero-image {
@@ -162,7 +188,7 @@ body {
     .image-wrapper img {
         width: 100%;
         max-width: 420px;
-        border-radius: 200px 200px 20px 20px; /* Форма арки */
+        border-radius: 200px 200px 20px 20px;
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         object-fit: cover;
         aspect-ratio: 3/4;
@@ -195,7 +221,7 @@ body {
     justify-content: center;
     border-radius: 50%;
     font-size: 1.5rem;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     animation: float 3s ease-in-out infinite;
 }
 
@@ -352,10 +378,10 @@ footer {
 
 /* --- Секция 2: Мои достижения --- */
 .achievements {
-    background-color: #5c8d89; /* Контрастный бирюзовый фон */
+    background-color: #5c8d89;
     padding: 80px 20px;
     color: #fff;
-    scroll-margin-top: 80px; /* Отступ при прокрутке к секции */
+    scroll-margin-top: 80px;
 }
 
 .achievements-container {
@@ -377,21 +403,22 @@ footer {
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
+    align-items: flex-start;
 }
 
-/* Карточка */
+/* Карточка достижения */
 .achievement-card {
     background-color: #ffffff;
     color: #2b2b2b;
     border-radius: 15px;
-    padding: 30px;
     width: 320px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease;
+    overflow: hidden;
 }
 
     .achievement-card:hover {
@@ -416,7 +443,7 @@ footer {
     flex-grow: 1;
 }
 
-/* Кнопка внутри карточки */
+/* Кнопка внутри карточки (пружинистая) */
 .card-btn {
     display: inline-block;
     padding: 10px 25px;
@@ -426,14 +453,273 @@ footer {
     border-radius: 30px;
     font-weight: 600;
     font-size: 0.9rem;
-    transition: background-color 0.3s;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease, background-color 0.3s ease;
 }
 
     .card-btn:hover {
         background-color: #46736f;
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 8px 18px rgba(70, 115, 111, 0.35);
     }
 
-/* --- Блок с деталями достижений --- */
+    .card-btn:active {
+        transform: translateY(2px) scale(0.96);
+    }
+
+/* Ripple-эффект */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.55);
+    transform: scale(0);
+    animation: rippleAnim 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes rippleAnim {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* --- Достижения: аккордеон на details/summary --- */
+.achievement-card[open] {
+    transform: translateY(-4px);
+}
+
+    .achievement-card[open] .card-btn {
+        background-color: #46736f;
+    }
+
+.achievement-card summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    width: 100%;
+}
+
+    .achievement-card summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .achievement-card summary::marker {
+        content: "";
+    }
+
+    .achievement-card summary h3 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        color: #1a1a1a;
+    }
+
+    .achievement-card summary p {
+        font-size: 0.95rem;
+        color: #555;
+        margin-bottom: 20px;
+    }
+
+.card-details {
+    padding: 0 30px 30px;
+    border-top: 1px dashed #e5e0d8;
+    margin-top: 5px;
+    animation: slideDown 0.35s ease;
+    width: 100%;
+}
+
+    .card-details p {
+        font-size: 0.98rem;
+        color: #4a4a4a;
+        line-height: 1.7;
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Секция 3: Технологии --- */
+.tech {
+    background-color: #f0ebe1;
+    padding: 90px 20px;
+    scroll-margin-top: 80px;
+}
+
+.tech-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tech .section-title {
+    color: #1a1a1a;
+    margin-bottom: 15px;
+}
+
+.tech-subtitle {
+    text-align: center;
+    color: #6b6b6b;
+    margin-bottom: 50px;
+    font-size: 1.05rem;
+}
+
+/* CSS Grid */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+/* Карточка технологии (pop-in + подпрыгивающая иконка) */
+.tech-card {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 30px 25px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    border-top: 4px solid #b87c4c;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+    .tech-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 16px 35px rgba(0, 0, 0, 0.12);
+    }
+
+        .tech-card:hover .tech-icon {
+            animation: iconBounce 0.6s ease;
+        }
+
+@keyframes popIn {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes iconBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    30% {
+        transform: translateY(-12px) scale(1.1);
+    }
+
+    60% {
+        transform: translateY(-4px) scale(1.05);
+    }
+}
+
+.tech-icon {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    line-height: 1;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.tech-card h3 {
+    font-size: 1.2rem;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.tech-card p {
+    font-size: 0.95rem;
+    color: #5a5a5a;
+    line-height: 1.6;
+}
+
+/* --- Превью-разделы на главной --- */
+.preview-section {
+    background-color: #faf8f5;
+    padding: 80px 20px;
+}
+
+.preview-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.section-title.dark {
+    color: #1a1a1a;
+}
+
+.preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.preview-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 35px 25px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    border-top: 4px solid #5c8d89;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+    .preview-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 16px 35px rgba(0, 0, 0, 0.12);
+    }
+
+        .preview-card:hover .tech-icon {
+            animation: iconBounce 0.6s ease;
+        }
+
+    .preview-card h3 {
+        font-size: 1.4rem;
+        color: #1a1a1a;
+        margin-bottom: 12px;
+    }
+
+    .preview-card p {
+        color: #5a5a5a;
+        margin-bottom: 22px;
+    }
+
+/* --- Отступ для внутренних страниц --- */
+.page-main {
+    padding-top: 110px;
+}
+
+    .page-main .section-title,
+    .page-main h1 {
+        text-align: center;
+        color: #1a1a1a;
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+    }
+
+    .page-main .tech {
+        padding-top: 40px;
+    }
+
+/* --- Блок деталей достижений (для обратной совместимости) --- */
 .details-section {
     background-color: #faf8f5;
     padding: 60px 20px;
@@ -448,10 +734,10 @@ footer {
     background: #fff;
     padding: 40px;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     margin-bottom: 40px;
     border-left: 5px solid #b87c4c;
-    scroll-margin-top: 80px; /* Отступ при прокрутке */
+    scroll-margin-top: 80px;
 }
 
     .detail-item h3 {
@@ -479,7 +765,7 @@ footer {
         border-color: #5c8d89;
     }
 
-/* --- Адаптивность (для телефонов и планшетов) --- */
+/* --- Адаптивность --- */
 @media (max-width: 900px) {
     .hero {
         flex-direction: column-reverse;
@@ -499,7 +785,7 @@ footer {
     .nav-links {
         justify-content: center;
         padding-right: 0;
-        flex-wrap: wrap; /* Чтобы меню не вылезало на узких экранах */
+        flex-wrap: wrap;
         gap: 15px;
     }
 
@@ -521,7 +807,8 @@ footer {
         align-items: center;
     }
 
-    .achievement-card {
+    .achievement-card,
+    details.achievement-card {
         width: 100%;
         max-width: 400px;
     }
@@ -532,5 +819,43 @@ footer {
 
     .detail-item {
         padding: 25px;
+    }
+
+    .tech {
+        padding: 70px 20px;
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .page-main {
+        padding-top: 90px;
+    }
+
+        .page-main .section-title,
+        .page-main h1 {
+            font-size: 2rem;
+        }
+}
+
+@media (max-width: 550px) {
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-card {
+        padding: 25px 20px;
+    }
+}
+
+/* --- Уважение к prefers-reduced-motion --- */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }

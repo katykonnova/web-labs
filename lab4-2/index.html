@@ -4,43 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Екатерина — Веб-разработчик и Фотограф</title>
-    <meta name="description" content="Портфолио Екатерины: современная веб-разработка и атмосферная фотография. Создаю сайты и ловлю красивые моменты.">
-
-    <!-- Подключаем шрифт Inter -->
+    <meta name="description" content="Портфолио Екатерины: веб-разработка, фотография, творчество.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Подключаем наш CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
+<script src="script.js"></script>
 <body>
 
-    <!-- Шапка сайта с навигацией -->
     <header class="header">
         <nav aria-label="Основная навигация">
             <ul class="nav-links">
-                <li><a href="#about">Обо мне</a></li>
-                <li><a href="#skills">Навыки</a></li>
-                <li><a href="#achievements">Достижения</a></li>
+                <li><a href="index.html" class="active">Главная</a></li>
+                <li><a href="achievements.html">Достижения</a></li>
+                <li><a href="tech.html">Технологии</a></li>
                 <li><a href="#contacts">Контакты</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Основной контент -->
     <main>
-        <!-- Главный экран (Hero) -->
+        <!-- Hero -->
         <section class="hero" id="about">
             <div class="hero-content">
                 <h1 class="fade-in-up">Привет! Я Екатерина</h1>
                 <p class="subtitle fade-in-up delay-1">Веб-разработчик в процессе · Фотограф</p>
                 <p class="hero-text fade-in-up delay-2">
-                    По соционике я — Дюма: ценю уют, гармонию и людей вокруг. А еще я пишу код на HTML, CSS, JS и ловлю моменты в объектив. Для меня веб-разработка и фотография — это два способа показать миру свою эстетику и сделать его немного лучше.
+                    По соционике я — Дюма: ценю уют, гармонию и людей вокруг. Пишу код на HTML, CSS, JS и ловлю моменты в объектив. Веб-разработка и фотография — два способа показать миру свою эстетику.
                 </p>
 
-                <!-- Семантический список навыков -->
-                <ul class="skills fade-in-up delay-3" id="skills">
+                <ul class="skills fade-in-up delay-3">
                     <li>HTML5</li>
                     <li>CSS3</li>
                     <li>JavaScript</li>
@@ -48,13 +42,11 @@
                     <li>ЗОЖ</li>
                 </ul>
 
-                <!-- Кнопка CTA -->
                 <a href="https://t.me/KKaterinnka" target="_blank" rel="noopener noreferrer" class="cta-button fade-in-up delay-4">
                     ✈️ Написать в Telegram
                 </a>
             </div>
 
-            <!-- Семантическая иллюстрация с подписью -->
             <figure class="hero-image fade-in-up delay-3">
                 <div class="image-wrapper">
                     <img src="italy.jpg" alt="Екатерина на фоне фонтана Треви в Риме">
@@ -64,64 +56,25 @@
             </figure>
         </section>
 
-        <!-- Секция 2: Мои достижения -->
-        <section class="achievements" id="achievements">
-            <div class="achievements-container">
-                <h2 class="section-title">Мои достижения</h2>
-
-                <div class="cards-wrapper">
-                    <!-- Карточка 1 -->
-                    <article class="achievement-card">
-                        <div class="card-icon">🏆</div>
-                        <h3>Первые шаги в вебе</h3>
-                        <p>Успешно освоила HTML и CSS, сверстала этот адаптивный сайт-визитку с нуля. В планах — активное изучение JavaScript.</p>
-                        <a href="#detail-1" class="card-btn">Подробнее</a>
+        <!-- Превью разделов -->
+        <section class="preview-section">
+            <div class="preview-container">
+                <h2 class="section-title dark">Что здесь есть</h2>
+                <div class="preview-grid">
+                    <article class="preview-card">
+                        <div class="tech-icon" aria-hidden="true">🏆</div>
+                        <h3>Достижения</h3>
+                        <p>Первые шаги в вебе, моменты Италии и поиск баланса.</p>
+                        <a href="achievements.html" class="card-btn">Смотреть</a>
                     </article>
 
-                    <!-- Карточка 2 -->
-                    <article class="achievement-card">
-                        <div class="card-icon">📸</div>
-                        <h3>Моменты Италии</h3>
-                        <p>Сделала серию атмосферных фотографий в Риме. Для меня фотография — это способ замедлиться и поймать идеальный свет.</p>
-                        <a href="#detail-2" class="card-btn">Подробнее</a>
-                    </article>
-
-                    <!-- Карточка 3 -->
-                    <article class="achievement-card">
-                        <div class="card-icon">🌿</div>
-                        <h3>Баланс и гармония</h3>
-                        <p>Учусь сохранять баланс между учебой, кодом и личной жизнью. Придерживаюсь принципов ЗОЖ и нахожу вдохновение в простых вещах.</p>
-                        <a href="#detail-3" class="card-btn">Подробнее</a>
+                    <article class="preview-card">
+                        <div class="tech-icon" aria-hidden="true">🛠️</div>
+                        <h3>Технологии</h3>
+                        <p>Инструменты и увлечения: от HTML и Figma до скрипки и рисования.</p>
+                        <a href="tech.html" class="card-btn">Смотреть</a>
                     </article>
                 </div>
-            </div>
-        </section>
-
-        <!-- Детали достижений -->
-        <section class="details-section">
-            <div class="details-container">
-
-                <!-- Деталь 1 -->
-                <article id="detail-1" class="detail-item">
-                    <h3>🏆 Подробнее: Первый код на CSS</h3>
-                    <p>Этот сайт — мой первый серьезный проект. Я изучила основы HTML5 и CSS3, научилась работать с блочной моделью, Flexbox, позиционированием и адаптивностью. В процессе я использовала семантические теги (&lt;header&gt;, &lt;main&gt;, &lt;article&gt;, &lt;figure&gt;) и создала плавные анимации появления элементов.</p>
-                    <a href="#achievements" class="back-btn">↑ Вернуться к достижениям</a>
-                </article>
-
-                <!-- Деталь 2 -->
-                <article id="detail-2" class="detail-item">
-                    <h3>📸 Подробнее: Ловлю моменты</h3>
-                    <p>Фотография для меня — это не просто нажатие на кнопку. Это умение видеть композицию, свет и эмоции. Поездка в Италию дала мне огромный буст вдохновения. Я фотографировала архитектуру, людей и детали, чтобы сохранить атмосферу того лета. Несколько моих работ можно будет увидеть в отдельной галерее (в планах на будущее!).</p>
-                    <a href="#achievements" class="back-btn">↑ Вернуться к достижениям</a>
-                </article>
-
-                <!-- Деталь 3 -->
-                <article id="detail-3" class="detail-item">
-                    <h3>🌿 Подробнее: Баланс и гармония</h3>
-                    <p>Учеба, программирование и творчество требуют много энергии. Чтобы не выгорать, я придерживаюсь принципов ЗОЖ: правильное питание, сон и спорт. А еще я ценю психологию. Понимание своего типа личности (Дюма) помогает мне находить общий язык с людьми и выстраивать комфортную атмосферу в команде.</p>
-                    <a href="#achievements" class="back-btn">↑ Вернуться к достижениям</a>
-                </article>
-
             </div>
         </section>
 
@@ -135,24 +88,17 @@
             </div>
         </aside>
 
-        <!-- Секция контактов -->
+        <!-- Контакты -->
         <section id="contacts" class="contacts">
             <h2>Давай знакомиться!</h2>
             <p>Открыта к интересным проектам, стажировкам и просто теплому общению.</p>
-
             <address class="contact-links">
-                <a href="https://t.me/KKaterinnka" target="_blank" rel="noopener noreferrer">
-                    Telegram: @KKaterinnka
-                </a>
-                <!-- ВАЖНО: Не забудь заменить ссылку ниже на свой реальный профиль GitHub! -->
-                <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
-                    GitHub
-                </a>
+                <a href="https://t.me/KKaterinnka" target="_blank" rel="noopener noreferrer">Telegram: @KKaterinnka</a>
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
             </address>
         </section>
     </main>
 
-    <!-- Подвал сайта -->
     <footer>
         <p>© 2024 Екатерина. Создано с любовью к чистому коду.</p>
     </footer>

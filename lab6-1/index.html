@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Сложный пример CSS Grid</title>
+<style>
+ body {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ min-height: 100vh;
+ margin: 0;
+ font-family: Arial, sans-serif;
+ background-color: #f5f5f5;
+ }
+ /* Контейнер сетки */
+    .grid-container {
+        display: grid;
+        width: 90%;
+        max-width: 1200px;
+        grid-template-columns: 1.5fr 1fr 2.5fr 1.5fr ;
+        grid-template-rows: 1fr 1fr 2.5fr 10px;
+        gap: 5px;
+        grid-template-areas:
+            "green green yellow ."
+            "orange orange orange ."
+            "pink . . ."
+            ". . . footer";
+    }
+ /* Цветные элементы сетки с именованными областями */
+ 
+ .item1 { grid-area: green;
+          background-color: palegreen; }
+ .item5 { 
+     grid-area: footer;
+     background-color: #4188ff; }
+ .item4 { 
+     grid-area: pink;
+     background-color: #ffb7c3; }
+ .item2 { 
+     grid-area: yellow;
+     background-color: #fae864; }
+ .item3 { 
+     grid-area: orange;
+     background-color: #ffae21; }
+
+ /* Оформление элементов сетки */
+ .grid-item {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ color: white;
+ font-size: 1.5em;
+ font-weight: bold;
+ border-radius: 8px;
+ padding: 20px;
+ }
+</style>
+</head>
+<body>
+<div class="grid-container">
+ <!--<div class="grid-item item1">Заголовок</div>
+ <div class="grid-item item2">Боковая панель</div>
+ <div class="grid-item item3">Контент</div>-->
+ <div class="grid-item item5">Футер</div>
+ <div class="grid-item item4">Большой блок</div>
+ <div class="grid-item item1">Широкий блок</div>
+ <div class="grid-item item2">Во всю ширину</div>
+ <div class="grid-item item3">Нижний блок</div>
+</div>
+</body>
+</html>
